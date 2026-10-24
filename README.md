@@ -4,6 +4,12 @@ AI X Fintech Hackathon: an agentic, policy-guarded cross-border payment demo on 
 
 This repository starts with the Next.js/React application from [Scaffold-XRP](https://github.com/XRPL-Commons/scaffold-xrp), cloned at commit `8cdf24f9339f4642b4cbf2f5d9dd094ca8726bd2`. The existing Archipelago Git history and origin are preserved. The Nuxt application, scaffold publishing CLI, and experimental Bedrock project are not included.
 
+## What we are building next
+
+We are building the **web platform first**, with shared server-side payment operations that can later be exposed to chat applications through MCP. Start with one approved Testnet payment, extend it to merchant batches, then add the assistant inside the platform. Chat integrations follow that working workflow.
+
+The [platform-first build plan](docs/platform-build-plan.md) defines the milestones, shared operations, completion gates, and parallel team workstreams, with links to the existing GitHub issues. It also includes a [sample batch CSV](docs/examples/payment-batch.csv) for the planned importer.
+
 ## First-time setup
 
 Start with the team's [requirements checklist](requirenment.txt). Application dependencies are declared in the workspace `package.json` files and installed together by pnpm using `pnpm-lock.yaml`.
