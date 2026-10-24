@@ -1,0 +1,58 @@
+Archipelago - first-time setup requirements
+==========================================
+
+Required tools
+--------------
+1. Git
+   Used to clone the team's repository.
+   Install: https://git-scm.com/install/
+
+2. Node.js 22.23.4 (includes npm and Corepack)
+   Use the version pinned in .nvmrc.
+   Install: https://nodejs.org/en/download/archive/v22.23.4
+   Windows: choose the .msi installer for your computer's architecture.
+   macOS: choose the .pkg installer.
+   Linux: use the matching binary or nvm (see README.md).
+
+3. pnpm 10.34.6
+   The exact version is pinned in package.json.
+   After cloning the repo, run: corepack enable
+   Then run: pnpm --version
+   Corepack downloads the pinned pnpm version on first use.
+
+4. A browser and internet access
+   Downloads need access to GitHub and the npm registry.
+   The live RPC check needs wss://s.altnet.rippletest.net:51233/.
+
+Install the application dependencies
+------------------------------------
+From the archipelago repository folder, run:
+
+    pnpm install --frozen-lockfile
+
+This installs the Next.js, React, TypeScript, Tailwind, XRPL, wallet, and
+development dependencies listed in the workspace package.json files.
+pnpm-lock.yaml supplies their exact resolved versions.
+
+Configure and start
+-------------------
+Copy apps/web/.env.example to apps/web/.env.local using the command for
+your operating system in README.md. The default network is XRPL Testnet.
+
+    pnpm dev
+
+Open http://localhost:3000. Stop the server with Ctrl+C.
+
+Optional: wallet testing
+-----------------------
+- GemWallet: install its browser extension; no app identifier is needed.
+- Xaman: configure NEXT_PUBLIC_XAMAN_API_KEY in apps/web/.env.local.
+- WalletConnect: configure NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID there.
+- Use a wallet configured for Testnet and fund it with test XRP.
+
+Wallet configuration is optional for viewing the starter, building it,
+running its tests, and checking the Testnet RPC connection.
+
+See README.md for the complete clone, setup, verification, and troubleshooting
+steps. JavaScript dependency versions are maintained in package.json and
+pnpm-lock.yaml; this file is the team's human-readable prerequisites checklist.
